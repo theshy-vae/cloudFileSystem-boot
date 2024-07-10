@@ -1,0 +1,47 @@
+server:
+  port: 8000
+  tomcat:
+    basedir: /tmp/tomcat
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloudFileSystem?serverTimezone=GMT%2B8  #120.79.95.69
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+      enabled: true
+
+  mail:
+    protocol: smtps
+    #配置SMTP服务器地址
+    host: smtp.163.com
+    #发送者邮箱
+    username: yufengling0223@163.com
+    #配置密码
+    password: CWXPDZNRVNVJGWRA
+    #端口号
+    port: 465
+    default-encoding: UTF-8
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: classpath:/static/
+project:
+  folder: E:/JavaProjection/waibao/file
+
+admin:
+  username: jntmcxk
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
+
+
+
+
+

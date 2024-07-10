@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyj.cloud.mapper.FileInfoMapper">
+
+    <select id="getFileVOList" resultType="com.hyj.cloud.model.vo.FileVO">
+        SELECT  f.id,f.filename,f.file_type,u.name,u.phone,f.create_time,f.file_size
+        FROM file_info f,user u
+        <where>
+            f.user_id = u.id
+            <if test="searchKey != null">
+               and  f.filename LIKE concat('%',#{searchKey},'%')
+            </if>
+        </where>
+    </select>
+    
+</mapper>
